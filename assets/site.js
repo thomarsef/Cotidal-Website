@@ -6,17 +6,17 @@
     l.setAttribute('data-open', String(!open));
     t.setAttribute('aria-expanded', String(!open));
   });
-
   /* Contact form.
-     Currently opens the visitor's email client with the message pre-filled.
-     To switch to a hosted handler (Formspree, Netlify, etc.), set FORM_ENDPOINT
-     below to the POST url and the form will submit over fetch instead. */
+     Posts to FORM_ENDPOINT when set, and falls back to the visitor's email
+     client if the request fails or the endpoint is blank. */
   var FORM_ENDPOINT = 'https://formspree.io/f/mzepralz';
   var TO = 'tom@cotidal.co.uk';
   var f = document.getElementById('contactForm');
   if (!f) return;
+  var sent = false;
   f.addEventListener('submit', function (e) {
     e.preventDefault();
+    if (sent) return;
     if (!f.checkValidity()) { f.reportValidity(); return; }
     var d = {
       first: f.first.value.trim(), last: f.last.value.trim(),
@@ -26,7 +26,9 @@
       fetch(FORM_ENDPOINT, {
         method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(d)
-      }).then(function () { done(); }).catch(function () { mailto(d); });
+      }).then(function (r) {
+        if (r.ok) { f.reset(); done(false); } else { mailto(d); }
+      }).catch(function () { mailto(d); });
       return;
     }
     mailto(d);
@@ -35,11 +37,14 @@
     var subject = 'Website enquiry from ' + d.first + ' ' + d.last;
     var body = d.message + '\n\n' + d.first + ' ' + d.last + '\n' + d.email;
     window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    done();
+    done(true);
   }
-  function done() {
+  function done(viaEmailApp) {
+    sent = true;
     var note = document.createElement('p');
-    note.textContent = 'Thank you. Your message is ready to send from your email app. If nothing opened, email tom@cotidal.co.uk directly.';
+    note.textContent = viaEmailApp
+      ? 'Thank you. Your message is ready to send from your email app. If nothing opened, email ' + TO + ' directly.'
+      : 'Thank you. Your message has been received and I will come back to you shortly.';
     note.style.cssText = 'margin:18px 0 0;color:var(--text-strong);font-weight:600;font-size:15px';
     f.appendChild(note);
   }
