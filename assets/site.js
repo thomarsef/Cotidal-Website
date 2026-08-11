@@ -11,8 +11,8 @@
      Currently opens the visitor's email client with the message pre-filled.
      To switch to a hosted handler (Formspree, Netlify, etc.), set FORM_ENDPOINT
      below to the POST url and the form will submit over fetch instead. */
-  var FORM_ENDPOINT = '';
-  var TO = 'info@cotidal.co.uk';
+  var FORM_ENDPOINT = 'https://formspree.io/f/mzepralz';
+  var TO = 'tom@cotidal.co.uk';
   var f = document.getElementById('contactForm');
   if (!f) return;
   f.addEventListener('submit', function (e) {
@@ -39,7 +39,7 @@
   }
   function done() {
     var note = document.createElement('p');
-    note.textContent = 'Thank you. Your message is ready to send from your email app. If nothing opened, email info@cotidal.co.uk directly.';
+    note.textContent = 'Thank you. Your message is ready to send from your email app. If nothing opened, email tom@cotidal.co.uk directly.';
     note.style.cssText = 'margin:18px 0 0;color:var(--text-strong);font-weight:600;font-size:15px';
     f.appendChild(note);
   }
