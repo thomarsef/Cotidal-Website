@@ -1,0 +1,119 @@
+/* ============================================================
+   COTIDAL — COLOR TOKENS
+   Core brand: Deep Navy, Cotidal Blue, Tidal Green.
+   Built on light/dark contrast. Neutrals are cooled toward navy.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core (from logo source files) ---- */
+  --cotidal-navy:  #0F1850; /* wordmark / deep surfaces */
+  --cotidal-blue:  #0964E6; /* primary action / icon mark */
+  --cotidal-green: #17E869; /* accent / highlight / tide */
+
+  /* ---- Navy ramp (deep, cool) ---- */
+  --navy-950: #070B26;
+  --navy-900: #0A1138;
+  --navy-800: #0F1850; /* brand navy */
+  --navy-700: #1A2766;
+  --navy-600: #27397E;
+  --navy-500: #364C99;
+  --navy-400: #5267B4;
+
+  /* ---- Blue ramp ---- */
+  --blue-800: #063583;
+  --blue-700: #0747A8;
+  --blue-600: #0964E6; /* brand blue */
+  --blue-500: #2D7BF0;
+  --blue-400: #5C98F4;
+  --blue-300: #97BCF9;
+  --blue-200: #C8DBFC;
+  --blue-100: #E6EFFE;
+  --blue-50:  #F2F7FF;
+
+  /* ---- Green ramp (tide) ---- */
+  --green-700: #0E9F47;
+  --green-600: #12C257;
+  --green-500: #17E869; /* brand green */
+  --green-400: #50EE8C;
+  --green-300: #8BF4B4;
+  --green-200: #C1F9D7;
+  --green-100: #E5FDEF;
+
+  /* ---- Neutral ramp (cool, navy-tinted) ---- */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #F6F8FC;
+  --neutral-100: #EEF1F8;
+  --neutral-200: #E0E5F0;
+  --neutral-300: #C7CEE0;
+  --neutral-400: #99A2BE;
+  --neutral-500: #6B7593;
+  --neutral-600: #4B5571;
+  --neutral-700: #333C54;
+  --neutral-800: #1F273B;
+  --neutral-900: #111728;
+
+  /* ---- Status ---- */
+  --amber-500:  #F5A623;
+  --amber-100:  #FCEFD2;
+  --red-500:    #E5484D;
+  --red-100:    #FBDCDD;
+
+  /* ============================================================
+     SEMANTIC ALIASES — use these in components
+     ============================================================ */
+
+  /* Surfaces */
+  --color-bg:           var(--neutral-0);
+  --color-bg-subtle:    var(--neutral-50);
+  --surface-card:       var(--neutral-0);
+  --surface-sunken:     var(--neutral-50);
+  --surface-muted:      var(--neutral-100);
+  --surface-inverse:    var(--navy-800);
+  --surface-inverse-2:  var(--navy-900);
+  --surface-brand:      var(--blue-600);
+  --surface-brand-soft: var(--blue-50);
+  --surface-accent-soft:var(--green-100);
+
+  /* Text */
+  --text-strong:   var(--navy-800);
+  --text-body:     var(--neutral-700);
+  --text-muted:    var(--neutral-500);
+  --text-subtle:   var(--neutral-400);
+  --text-inverse:  var(--neutral-0);
+  --text-inverse-muted: #AEB7D6;
+  --text-on-brand: var(--neutral-0);
+  --text-link:     var(--blue-600);
+  --text-accent:   var(--green-700);
+
+  /* Borders */
+  --border:        var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  --border-brand:  var(--blue-300);
+  --border-inverse: rgba(255,255,255,0.14);
+
+  /* Interactive */
+  --primary:        var(--blue-600);
+  --primary-hover:  var(--blue-700);
+  --primary-press:  var(--blue-800);
+  --primary-soft:   var(--blue-50);
+  --accent:         var(--green-500);
+  --accent-strong:  var(--green-700);
+
+  /* Feedback */
+  --success:       var(--green-600);
+  --success-soft:  var(--green-100);
+  --warning:       var(--amber-500);
+  --warning-soft:  var(--amber-100);
+  --danger:        var(--red-500);
+  --danger-soft:   var(--red-100);
+  --info:          var(--blue-600);
+  --info-soft:     var(--blue-50);
+
+  /* Focus */
+  --focus-ring:    var(--blue-400);
+
+  /* Brand gradients (tidal motion) */
+  --gradient-tide:    linear-gradient(120deg, var(--navy-900) 0%, var(--navy-700) 55%, var(--blue-700) 130%);
+  --gradient-surf:    linear-gradient(135deg, var(--blue-600) 0%, var(--blue-500) 100%);
+  --gradient-ebb:     linear-gradient(135deg, var(--blue-600) 0%, var(--green-500) 130%);
+}

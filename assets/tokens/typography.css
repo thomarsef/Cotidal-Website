@@ -1,0 +1,50 @@
+/* ============================================================
+   COTIDAL — TYPOGRAPHY TOKENS
+   Display: Montserrat (geometric, wide — echoes the wordmark)
+   Sans/UI/Body: Manrope (clean, modern, friendly)
+   Mono/Eyebrow: Space Mono (data / labels / tidal nods)
+   NOTE: brand ships no font binaries; these are close
+   Google Fonts substitutes. See readme.md.
+   ============================================================ */
+
+:root {
+  /* Families */
+  --font-display: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans:    'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold:800;
+
+  /* Type scale (px) */
+  --text-2xs:  11px;
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  30px;
+  --text-3xl:  38px;
+  --text-4xl:  48px;
+  --text-5xl:  62px;
+  --text-6xl:  80px;
+
+  /* Line heights */
+  --leading-none:    1;
+  --leading-tight:   1.12;
+  --leading-snug:    1.28;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* Letter spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-eyebrow: 0.16em; /* uppercase mono labels */
+}

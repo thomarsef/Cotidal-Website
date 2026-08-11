@@ -1,0 +1,8 @@
+/* ============================================================
+   COTIDAL — WEBFONTS
+   Substitute families from Google Fonts (brand ships no
+   binaries). Swap these @import/@font-face blocks if the
+   real foundry files arrive. See readme.md › Typography.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
